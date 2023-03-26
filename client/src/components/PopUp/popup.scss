@@ -1,0 +1,102 @@
+@import "../../style/variables";
+
+.popup-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.popup-content {
+  position: absolute;
+  height: auto;
+  left: 30%;
+  right: 30%;
+  top: 30%;
+  text-align: center;
+  padding: 0 0 65px 0;
+  border-radius: 15px;
+  border-color: $black;
+  background: $white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 12;
+  .popup-close {
+    position: absolute;
+    font-size: 24px;
+    padding: 5px;
+    top: 4px;
+    right: 6px;
+    &:active {
+      transition: all 0.4s ease-out;
+      color: red;
+    }
+  }
+  .popup-title {
+    font-weight: 600;
+    color: #504f4f;
+    margin: 12px 0;
+  }
+  .card-delete {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    align-self: start;
+    border-radius: 2px;
+    background-color: rgb(145, 8, 8);
+  }
+}
+.card-info {
+  width: 100%;
+  max-height: 300px;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+
+  .card-info__content {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+.file-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid $pale-green;
+  font-weight: 400;
+  padding: 6px 14px;
+  border-radius: 4px;
+  &:hover {
+    background-color: #0000000e;
+  }
+  .edit-part {
+    display: flex;
+    gap: 6px;
+    .file-btn {
+      border: none;
+      font-family: "Orbitron";
+      font-weight: 800;
+      cursor: pointer;
+      border: 1px solid #52796f;
+      background-color: #cad2c534;
+      padding: 1px 5px;
+    }
+    .file-download:active {
+      background-color: $valid-green;
+    }
+    .file-delete:active {
+      background-color: $invalid-red;
+    }
+  }
+}

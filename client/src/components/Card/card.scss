@@ -1,0 +1,51 @@
+@import "../../style/variables";
+
+.card-item {
+  width: 95%;
+  height: auto;
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  min-height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 4px;
+  cursor: pointer;
+  background-color: $white;
+  box-shadow: 0 0 1px 0 $light-green;
+  &:hover {
+    background-color: #ffffffa9;
+  }
+  .card-title {
+    font-weight: 600;
+    padding: 4px 12px;
+  }
+  .card-subtitle {
+    font-size: 14px;
+  }
+  .card__file-upload {
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px;
+    margin-top: 24px;
+    ul {
+      width: 90%;
+    }
+  }
+  button {
+    width: 100%;
+    cursor: pointer;
+    color: $dark-green;
+    padding: 3px 6px;
+    margin-top: 4px;
+    border: 1px solid $pale-green;
+    background-color: transparent;
+    &:active {
+      box-shadow: 0 0 4px 0 $light-green;
+    }
+  }
+}

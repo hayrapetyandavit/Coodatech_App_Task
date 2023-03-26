@@ -1,0 +1,25 @@
+@import "../../style/variables";
+
+.board__content {
+  min-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.add-card {
+  width: 100%;
+  border: none;
+  background: none;
+}
+.add-input {
+  width: 95%;
+  min-height: 30px;
+  color: $light-green;
+  margin: 8px 0;
+  padding-left: 8px;
+}
+.add-btn {
+  width: 95%;
+  &:active {
+    box-shadow: 0 0 4px 0 $light-green;
+  }
+}

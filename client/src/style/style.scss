@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&display=swap");
+
+@import "./variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+input,
+button,
+select {
+  border: none;
+  outline: none;
+  color: $pale-green;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  font-family: "Kanit";
+}
+[class*="__container"] {
+  max-width: 100vw;
+  height: 100vh;
+  padding: 0px 20px;
+}

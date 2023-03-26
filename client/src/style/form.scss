@@ -1,0 +1,267 @@
+@import "./variables";
+
+@mixin focus-input-after($url) {
+  font-size: 22px;
+  color: $black;
+  content: url($url);
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  padding-left: 5px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.form__container {
+  display: flex;
+  flex-direction: row;
+  background-color: $white;
+  padding: 0;
+}
+.form__wallpaper {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  background-color: $pale-green;
+  h1 {
+    font-family: "Orbitron";
+    font-weight: 800;
+    font-size: 5rem;
+    color: rgba(245, 242, 242, 0.959);
+  }
+}
+.form__content {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.form-title {
+  padding-bottom: 30px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.form__fildes {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.input__grp {
+  display: flex;
+  flex-direction: column;
+}
+input:focus {
+  border-color: transparent !important;
+}
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+input:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+.wrap-input {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+.form-input {
+  font-family: "Kanit";
+  font-size: 16px;
+  outline: none;
+  border: none;
+  color: $light-grey;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  height: 45px;
+  background: transparent;
+  padding: 0 5px 0 38px;
+}
+.focus-input {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    background: $black;
+  }
+}
+.focus-input-name::after {
+  @include focus-input-after("../assets/images/login/user.png");
+}
+.focus-input-email::after {
+  @include focus-input-after("../assets/images/login/email.png");
+}
+.focus-input-password::after {
+  @include focus-input-after("../assets/images/login/lock.png");
+}
+.form-input:focus {
+  padding-left: 5px;
+}
+.form-input:focus + .focus-input::after {
+  top: -22px;
+  font-size: 18px;
+}
+.form-input:focus + .focus-input::before {
+  width: 100%;
+}
+.valid::before {
+  background: $valid-green;
+}
+.invalid::before {
+  background: $invalid-red;
+}
+input.form-input:-webkit-autofill,
+input.form-input:-webkit-autofill:hover,
+input.form-input:-webkit-autofill:focus,
+input.form-input:-webkit-autofill:active {
+  transition: background-color 5000000s ease-in-out 0s;
+}
+.form-input-pass {
+  position: relative;
+}
+.fa-eye,
+.fa-eye-slash {
+  position: absolute;
+  top: 35%;
+  left: 92%;
+  cursor: pointer;
+  color: $black;
+}
+.fa-eye-btn {
+  display: flex;
+  background: transparent;
+  border: none;
+}
+.login-btn {
+  position: relative;
+  font-family: "Kanit";
+  width: 100%;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 25px;
+  color: $white;
+  border-radius: 6px;
+  border: none;
+  padding: 8px 10px;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  transition-duration: 0.5s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  &::after {
+    content: "";
+    background: $white;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s;
+  }
+  &:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+  }
+}
+p {
+  color: $invalid-red;
+  position: absolute;
+  top: 50px;
+  left: 8px;
+  font-size: 14px;
+}
+.link-subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  padding-top: 50px;
+  span {
+    cursor: pointer;
+    font-weight: 600;
+    color: $light-green;
+    margin-left: 8px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .form__fildes {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .form__wallpaper {
+    h1 {
+      font-weight: 800;
+      font-size: 3.5rem;
+    }
+  }
+}
+@media (max-width: 767.98px) {
+  .form__content {
+    width: 100%;
+  }
+  .form__wallpaper {
+    width: 0;
+    h1 {
+      font-size: 0;
+    }
+  }
+  .form__fildes {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,51 @@
+@import "../../style/variables";
+
+.columns {
+  display: flex;
+  align-items: start;
+  gap: 14px;
+  margin: 80px 0;
+  padding: 0 4px;
+}
+.column-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 300px;
+  height: auto;
+  text-align: center;
+  color: rgb(80, 79, 79);
+  cursor: default;
+  box-shadow: 0 0 4px 0 $light-green;
+  background-color: $paple-light;
+  border-radius: 4px;
+  padding: 6px 4px;
+  .column-title {
+    font-weight: 600;
+    font-size: 18px;
+    padding-bottom: 14px;
+  }
+  .column-content {
+    width: 95%;
+    flex: 1 1 auto;
+  }
+}
+.add-column {
+  width: 100px;
+  height: auto;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: rgb(105, 102, 102);
+  cursor: pointer;
+  border: 1px solid $light-green;
+  background-color: $paple-light;
+  padding: 6px 4px;
+
+  &:hover {
+    background-color: $paple-light-hover;
+  }
+  &:active {
+    box-shadow: 0 0 4px 0 $paple-light-hover;
+  }
+}
