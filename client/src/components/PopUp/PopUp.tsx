@@ -18,10 +18,11 @@ interface IProps {
   userId: number;
   setShow: (arg: boolean) => void;
   cardFiles: cardFiles[];
+  name: string;
 }
 
 const PopUp: React.FC<IProps> = (props) => {
-  const { title, cardId, userId, setShow, cardFiles } = props;
+  const { title, cardId, userId, setShow, cardFiles, name } = props;
 
   useEffect(() => {
     dispatch(getAllfilesAction());
@@ -63,6 +64,7 @@ const PopUp: React.FC<IProps> = (props) => {
     <div className="popup-container">
       <div className="popup-content" ref={wrapperRef}>
         <h2 className="popup-title">{title}</h2>
+        <h4 className="popup-title">{name}</h4>
         <span
           className="popup-close"
           onClick={(e: React.MouseEvent<HTMLSpanElement>) => {

@@ -6,17 +6,17 @@ import app from "../server";
 describe("Authentication API", () => {
   let token: string;
 
-  //   describe("POST /register", () => {
-  //     it("should register a new user", async () => {
-  //       const res = await request(app).post("/register").send({
-  //         name: "Davit",
-  //         email: "1@example.com",
-  //         password: "password.9M",
-  //       });
+  describe("POST /register", () => {
+    it("should register a new user", async () => {
+      const res = await request(app).post("/register").send({
+        name: "Davit",
+        email: "1@example.com",
+        password: "password.9M",
+      });
 
-  //       expect(res.status).toBe(200);
-  //     });
-  //   });
+      expect(res.status).toBe(200);
+    });
+  });
 
   describe("POST /login", () => {
     it("should return an error for an empty email", async () => {
@@ -92,7 +92,7 @@ describe("Authentication API", () => {
     });
   });
 
-  //For column.router
+  // For column.router
   describe("POST /column", () => {
     it("should create a new column if user is logged in", async () => {
       const res = await request(app)
@@ -132,7 +132,7 @@ describe("Authentication API", () => {
     });
   });
 
-  //   For card.router
+  // For card.router
   describe("POST /card", () => {
     it("should create a new card if user is logged in", async () => {
       const res = await request(app)

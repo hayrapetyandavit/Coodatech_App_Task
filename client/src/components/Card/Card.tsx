@@ -36,6 +36,9 @@ const Card: React.FC<IProps> = (props) => {
 
   const card = cards.find((card) => card.id == id);
   const userName = users.find((user) => user.id == card?.userId);
+  const name = `Created by ${
+    userName ? userName.name.toLocaleUpperCase() : "unknown user"
+  }`;
   const files = fileList ? Array.from(fileList) : [];
   const cardFiles = allFiles.filter((item: cardFiles) => item.cardId === id);
 
@@ -110,15 +113,14 @@ const Card: React.FC<IProps> = (props) => {
           userId={userId}
           setShow={handleClosePopup}
           cardFiles={cardFiles}
+          name={name}
         />
       ) : null}
       <div className="card-title">
         {`${title} (${filesCount} ${filesCount > 1 ? "files" : "file"})`}
       </div>
       <div className="card-subtitle">
-        {`Created by ${
-          userName ? userName.name.toLocaleUpperCase() : "unknown user"
-        }`}
+        {name}
         <hr />
       </div>
       <div className="card__file-upload">
