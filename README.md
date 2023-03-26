@@ -18,8 +18,6 @@
 
 ## Technologies
 
-Project is done with:
-
 - TypeScript
 - React JS
 - Redux Toolkit
